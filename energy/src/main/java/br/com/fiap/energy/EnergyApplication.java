@@ -2,12 +2,21 @@ package br.com.fiap.energy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.flyway.FlywayMigrationStrategy;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class EnergyApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(EnergyApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(EnergyApplication.class, args);
+    }
 
+//    @Bean
+//    public FlywayMigrationStrategy cleanMigrateStrategy() {
+//        return flyway -> {
+//            flyway.repair();
+//            flyway.migrate();
+//        };
+//    }
 }

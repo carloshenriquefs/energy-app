@@ -23,19 +23,19 @@ public class Equipment {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_EQUIPMENT")
     @SequenceGenerator(
-            name = "SEQ_SEQ_EQUIPMENT",
-            sequenceName = "SEQ_SEQ_EQUIPMENT",
+            name = "SEQ_EQUIPMENT",
+            sequenceName = "SEQ_EQUIPMENT",
             allocationSize = 1
     )
     private Long id;
     private String name;
-    private String local;
-    private String kind;
+    private String location;
+    private String type;
 
     @Enumerated(EnumType.STRING)
     private StatusEquipment status;
 
-    private LocalDateTime dateCreated;
+    private LocalDateTime created_at;
 
     @OneToMany(mappedBy = "equipment", cascade = CascadeType.ALL)
     private List<Measurement> measurements;
